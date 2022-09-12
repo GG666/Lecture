@@ -91,13 +91,12 @@ int main(){
 
 ## inline
 
-Put "inline" before the function will suggest compiler to unfold the function code just like macro. But when the compiler may ignore the inline if
-1. function is too big
-2. the function could call itself(recuresive)
-3. the compiler does not support inline
+Put "inline" before the function will suggest compiler to unfold the function code just like macro. But the compiler may ignore the inline if
+1. The function is too big
+2. The function could call itself(recuresive)
+3. The compiler does not support inline
 
 In contrast to macro, inline functions have 2 advantages
-
 1. inline function has type checking
 2. inline function has type conversion
 
@@ -111,7 +110,7 @@ inline int add(int a, int b){
 
 ## function overloading
 
-C++ allows the same name to be used for two or more different functions, which is called function overloading. The compiler will decide which function should be called with the following cases.
+C++ allows the same name to be used for two or more different functions, which is called function overloading. The compiler will decide which function should be called in the following cases.
 
 1. Those functions have different numbers of parameters.
 
@@ -121,14 +120,14 @@ C++ allows the same name to be used for two or more different functions, which i
     void fun1(int, int, int);
 ```
 
-2. Those fucntions have at least a different type of data parameter.
+2. Those functions have at least one different type of data parameter.
 
 ```C++
     void fun2(int, char)
     void fun2(float, char)
 ```
 
-3. Those parameters of the functions be in a different order
+3. Those parameters of the functions be in a different order.
 
 ```C++
     void fun3(char, int, float)
@@ -146,7 +145,7 @@ float fun(int, int) // Error
 
 ## default arguments
 
-C++ allow to give default arguments. A function can has both default arguments and non-default arguments. The default arguments must always be right of non-default arguments.
+C++ allows the giving of default arguments. A function can have both default arguments and non-default arguments. The default arguments must always be on the right side of non-default arguments.
 
 ```C++
 void fun(int a = 5, int b = 10);
@@ -172,7 +171,7 @@ int main(){
 
 ## reference
 
-A reference is an implicit pointer that is automatically dereferenced. A reference also act as a alternative name of a variable.
+A reference is an implicit pointer that is automatically dereferenced. A reference also acts as an alternative name for a variable.
 
 The value of reference must be assigned when declared it.
 ```C++
@@ -196,7 +195,7 @@ The value of reference must be assigned when declared it.
 
 ### passing reference to a function
 
-We can pass reference to a function. The benefit of it is that when pass by value, we need an copy of the variable which will cause both time and memory space. Also, the more pointers in the code, the more hard to read the code. 
+We can pass a reference to a function. The benefit of it is that when passing by value, we need a copy of the variable which will cause both time and memory space. Also, the more pointers in the code, the harder to read the code. 
 
 ```C++
 void swap(int a, int b){
@@ -234,7 +233,7 @@ int main(){
 
 ## new and delete
 
-C++ support new and delete to help dynamic allocation. The word "new" will return NULL when error occurs in memory allocation.
+C++ supports new and delete to help dynamic allocation. The word "new" will return NULL when an error occurs in memory allocation.
 
 ```C++
 int * a = new int (10);
@@ -249,7 +248,7 @@ delete a;
 
 ### Memory leak
 
-Like malloc function, we must use new and delete carefully, or we will encounter memory leak.
+Like the malloc function, we must use new and delete carefully, or we will encounter memory leaks.
 
 ```C++
 float *ptr = new float; //Allocates first block
