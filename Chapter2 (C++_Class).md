@@ -4,7 +4,7 @@
 
 ## A Class
 
-A class is like a struct, it does not have a entity. It just like some blueprints or templates(just like other data types). We have to declare a class variable to create an entity. To put it shortly,  Class is a concept while objects are instances of a class.
+A class is like a struct, it does not have an entity. It is just like some blueprints or templates(just like other data types). We have to declare a class variable to create an entity. To put it shortly,  Class is a concept while objects are instances of a class.
 
 ```C++
 
@@ -18,16 +18,16 @@ class class_name{
 };
 ```
 
-- The naming convention of class is the same as other variables. In practice, we usually put first letter in uppercase.
-- The braces({}) indicates the range of the class. (The contents are in {})
-- Data members are the variables in class, also called member variables or attributes.
-- Member functions are the functions that declared in class. Also called method or behavior.
+- The naming convention of a class is the same as other variables. In practice, we usually put the first letter in uppercase.
+- The braces({}) indicate the range of the class. (The contents are in {})
+- Data members are the variables in a class, also called member variables or attributes.
+- Member functions are the functions declared in a class. Also called method or behavior.
 - Public and private. Public members can be accessed from outside the class. Private members can only be accessed from the member function of the class.
-- A class entity has it own data members, but all the class entities share a same member functions.
+- A class entity has its data members, but all the class entities share the same member functions.
 
-Similiar to struct, we can use the '.' operator to access the member of the class.
+Similar to a struct, we can use the '.' operator to access the member of the class.
 
-The only difference of class and struct in C++ is that struct-related functions are all public functions.
+The only difference between class and struct in C++ is that struct-related functions are all public functions.
 
 ```C++
 #include <iostream>
@@ -73,16 +73,16 @@ int main()
 ### class member
 
 #### Member variables
-Also called data members. Data members can be viewed as the  attributes or properties of an object.
+Also called data members. Data members can be viewed as the attributes or properties of an object.
 
 #### Member functions
-Member functions also called as behaviors or methods.
+Member functions are also called behaviors or methods.
 
 ### Public and Private member
 
-Private: Private member can only access by the member function of the class.
+Private: Private members can only access by the member function of the class.
 
-Public: can be accessed by members of its class as well as members of any other class and non-member functions, including main function.
+Public: can be accessed by members of its class as well as members of any other class and non-member functions, including the main function.
 
 ```C++
 #include<iostream>
@@ -132,7 +132,7 @@ int main() {
 ### constructor and destructor
 
 #### constructor
-Constructor is the function with the same name of the class. Constructor will be invoked automatically when a class instance is initialized.
+Constructor is the function with the same name as the class. Constructor will be invoked automatically when a class instance is initialized.
 We often use it to initialize data members.
 
 ```C++
@@ -145,7 +145,7 @@ public:
 ```
 
 1. Constructor has no return type
-2. It can have parmeters.
+2. It can have parameters.
 3. It has the same name as the class.
 4. Constructor function is automatically called when the class object is declared.
 5. It should be public so the outside function can call it.
@@ -235,7 +235,7 @@ int main(){
 }
 ```
 
-Consider a class whose constructor allocates memory dynamically. When the object's copy is destroyed, the destructor will free memory allocated for the original object, which will destroy the original object.
+Consider a class whose constructor allocates memory dynamically. When the object's copy is destroyed, the destructor will free the memory allocated for the original object, which will destroy the original object.
 ![](https://i.imgur.com/V7xjXZr.png)
 
 ```C++
@@ -325,9 +325,9 @@ int main(){
 }
 ```
 
-- The sum of calls of normal constructors and copy constructors are equal to the number of calls of destructors.
+- The sum of calls of normal constructors and copy constructors is equal to the number of calls of destructors.
 
-- If a class doesn't have an explicit copy constructor, the compiler will create default copy constructor, the default copy constructor will simply make an identical (bit-by-bit) copy of the object.
+- If a class doesn't have an explicit copy constructor, the compiler will create a default copy constructor, and the default copy constructor will simply make an identical (bit-by-bit) copy of the object.
 
 ![](https://i.imgur.com/H1k1lB5.png)
 
@@ -371,13 +371,13 @@ A class can be a friend of other classes. All the member functions in the friend
 
 #### friendship relation
 
-There are many points of friend relations that are like human friendship.
-- It is not reverse, if A say it has B as its friend, does not mean that B regard A as its friend. 
+There are many points of friend-relations that are like human friendship.
+- It is not reverse, if A says it has B as its friend, does not mean that B regards A as its friend. 
 - It is not transitive. If A is a friend of B and B is a friend of C, doesn't means that A is a friend of C.
 
 #### "this" pointer
 
-The this pointer stores the address of an object. In C++, We usually ignore it and let the compiler deal with it implicitly. The programmar can use the pointer explicitly as well.
+The this pointer stores the address of an object. In C++, We usually ignore it and let the compiler deal with it implicitly. The programmer can use the pointer explicitly as well.
 
 ```C++
 #include <iostream>
