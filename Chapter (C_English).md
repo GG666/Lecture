@@ -1,7 +1,6 @@
 # Function and Pointer
 
-Each function is essentially a small program, with its own 
-declarations, statements and name.
+Each function is essentially a small program, with its declarations, statements, and name.
 
 ```C++
 #include <stdio.h>
@@ -41,11 +40,11 @@ Return_type function_name(parameter type1 parameter name1, parameter type2 param
 
 ### function call
 
-When we want to use the funciton, we must call the function with the **arguments** it need.
+When we want to use the function, we must call the function with the **arguments** it needs.
 
 A function call consists of a function name followed by a list of arguments, enclosed in parentheses.
 
-Call of a non-void function produces a value that can be stored in a variable, tested, printed, or used in some other way
+The call of a non-void function produces a value that can be stored in a variable, tested, printed, or used in some other way
 
 ```C++
 avg = average(x, y);
@@ -70,9 +69,9 @@ printf("Average: %g\n", average(x, y));
 ...
 ```
 
-<練習> Please write a function that can help calculate the average score in the calss. Your program have to make user input the number of subjects first, then the numbers of students in the class, follow by their grades. The function should return the average of certain subject.
+<練習> Please write a function that can help calculate the average score in the class. Your program has to make the user input the number of subjects first, then the number of students in the class, followed by their grades. The function should return the average of certain subjects.
 
-<練習> Please write a program to print Hello World
+<練習> Please write a program to print "Hello World".
 
 
 <Bonus> Discard the return value may seems strange but sometimes its useful.
@@ -96,11 +95,11 @@ A function declaration provides the compiler with a brief glimpse at a function 
     
 ---
 ### Pass-by-value
-When a function has been called, the value of each argument is assigned to the corresponding parameter.
+When a function has been called, the value of each argument is assigned to the corresponding parameter. A copy of the argument will be generated and passed to the function.
     
-Therefore, when we change the value of the parameter. It does not effect the original variable(cause we only change the copy of the variable).
+When we change the value of the parameter. It does not affect the original variable(cause we only change the copy of the variable).
 
-Look at the function below, since n is a copy of the original exponent, we can modify the function safely:
+Look at the function below, since n is a copy of the original exponent, we can modify the function safely
 
 ```C++
 #include <iostream>
@@ -145,7 +144,7 @@ But what if we need a function to change the value of the variables?
 ### Pass-by-pointer
 C allows passing a pointer to a function. To do so, simply declare the function parameter as a pointer type.
 
-Following is a simple example where we pass an unsigned long pointer to a function and change the value inside the function which reflects back in the calling function:
+Following is a simple example where we pass an unsigned long pointer to a function and change its value inside the function.
 
 ```C++
 #include <stdio.h>
@@ -171,7 +170,7 @@ void getSeconds(unsigned long *par) {
 }
 ```
 
-By this way, we can change the value of the parameters instead of change the value of their copy.
+In this way, we can change the value of the parameters instead of changing the value of their copy.
 
 ```C++
 #include <stdio.h>
@@ -203,19 +202,19 @@ double getAverage(int *arr, int size) {
    return avg;
 }
 ```
-<練習> Please write a function to swap the value of given two variables. And check it by print their address.
+<練習> Please write a function to swap the value of the given two variables. And check it by printing their address.
 **Input** : a(stores value x) b(stores value y)
 **Output** : a(stores value y) b(stores value x)
 (Hint: pass-by-pointer)
 (Hint2 : The function should be like : void swap(int *a,int *b)...... )
     
-<Bonus練習> Please write a function that can assign the value 0 to the array with given range
+<Bonus練習> Please write a function that can assign the value 0 to the array with given range.
 
 ## Argument coercion
     
 #### Argument promotion rule
 
-If one argument is lower datatype, that can be converted into higher datatypes, but the reverse is not true(Like high dimension data compressed into low dimension will cause data loss).
+If one argument is a lower datatype, that can be converted into higher data types, but the reverse is not true(Like high dimension data compressed into low dimension will cause data loss).
 
 ![](https://i.imgur.com/Kkwy3lU.jpg)
 [資料來源(reference)](https://www.tutorialspoint.com/argument-coercion-in-c-cplusplus)
@@ -242,9 +241,9 @@ int main(){
 
 ## Pointer points to function
 
-Variables need memory to store the data value, and programs  need memory to execute. For a function, the name of it is the address stored in.
+Variables need memory to store the data value, and programs need memory to execute. For a function, the name of it is the address stored.
 
-Therefore, we can also use pointer to points a function. Different type of function must be pointed by different pointers.
+Therefore, we can also use a pointer to point to a function. Different types of functions must be pointed by different pointers.
 
 ```C++
 return_type (*pointer_name)(data_type1,data_type2,...);
@@ -266,14 +265,14 @@ int main(){
 ```
 
 ## Double pointer
-Double pointer is the pointer that points to another pointer. To decalre a double pointer, we must type ** before the variable name.
+A double pointer is a pointer that points to another pointer. To declare a double pointer, we must type ** before the variable name.
 
 ```C++
 int *pi;
 int **ppi;
 ```
 
-A 2-D array itself is also a double pointer.
+A 2-D array is also a double pointer itself.
 
 ```C++
 
@@ -293,7 +292,7 @@ arr[0][0]=1;
 //print and see
 ```
 
-<思考> Why we need to use pointer to access the array? What is the pros by using the pointer?
+<思考> Why do we need to use a pointer to access the array? What are the pros of using the pointer?
 
 <BONUS練習>(HARD) Write a program that can add up two 2D arrays. Try to make the program as fast as possible!
 
@@ -341,9 +340,9 @@ void print_int(int i){
 
               
 ## Program exit
-When the program exit with return value 0 is normal terminates. Using the exit() function in stdlib.h can end the main function, too.
+When the program exit with the return value 0 means normal terminates. Using the exit() function in stdlib.h can end the main function, too.
 
-The argument passed to exit has the same meaning as the return value of main function: both indicate the program’s status at termination. As a result, we’d pass 0 to indicate normal termination.
+The argument passed to exit has the same meaning as the return value of the main function: both indicate the program’s status at termination. As a result, we’d pass 0 to indicate normal termination.
 
 The difference between return and exit is that exit causes program termination regardless of which function calls it.
 
