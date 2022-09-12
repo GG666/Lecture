@@ -51,14 +51,28 @@ cout.fill('*');
 
 ---
 
-### getline(cin, s)
-
-Keep reading the input until encounter the '\n' character. The max_char_nums indicates the maximum numbers of characters it can handle. If it encounter the '\n' character, it will stop reading, and remove the '\n' character in the buffer.
-
 ### cin.get()
 
-Get a character.
-char c = cin.get();
+Keep reading the input until reach the number(2th argument). The max_char_nums indicates the maximum numbers of characters it can handle. If it encounter the '\n' character, it will stop reading, and do not remove [enter], [space], [tab] character in the buffer.
+
+```C++
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    char ss[50];
+    cin.get(ss, 20, '.');
+    cout<<ss<<endl;
+    cin.get();
+    cin.get(ss, 20, '.');
+    cout<<ss<<endl;
+}
+```
+
+### cin.getline()
+
+Keep reading the input until encounter the '\n' character. The max_char_nums indicates the maximum numbers of characters it can handle. If it encounter the '\n' character, it will stop reading, and remove [enter], [space], [tab] character in the buffer.
 
 ```C++
 int main(){
