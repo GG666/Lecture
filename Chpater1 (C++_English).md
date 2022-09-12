@@ -62,12 +62,13 @@ char c = cin.get();
 
 ```C++
 int main(){
-    string c;
     string s;
     getline(cin, s);
     cout<<s<<endl;
-    c = cin.get();
-    cout<<c<<endl;
+    
+    char ss[50];
+    cin.get(ss,10);
+    cout<<ss<<endl;
 }
 ```
 
