@@ -2,7 +2,7 @@
 # Pointer
 ## Whats' Pointers
 
-Pointer is a variable that store the data which is the address of another variable.
+A pointer is a variable that stores the data which is the address of another variable.
 
 ```C++
 #include <cstdio>
@@ -14,7 +14,7 @@ int main(){
 }
 ```
 
-Actually in the program above, the thing left to '=' is the address value, as a result we can seem the above program as we assign the value right to the '=' to the address.
+Actually, in the program above, the thing left to '=' is the address value, as a result, we can see the above program as we assign the value right to the '=' to the address.
 
 ```C++
 #include <cstdio>
@@ -30,11 +30,11 @@ int main(){
 }
 ```
 
-When using pointer to do the operations, remember it must be with the '*' sign. Pointers with the star sign must be regarded as one. And also the substitute(替身) of the variable which the pointer points.
+When using pointers to do the operations, remember it must be with the '*' sign. Pointers with the star sign must be regarded as one. And also the substitute(替身) of the variable which the pointer points.
 
 ## The size of pointer type variable
 
-As we already know, different types use As we already know, different types take different sizes of spaces.
+As we already know, different types use different sizes of spaces.
 ##### Review
 
 ```
@@ -51,16 +51,16 @@ pointer   => ???
 ```
 
 **Question**
-1. What is the range of integer can we count by our hands when using binary expression.
-2. What is the size of pointer in a 32-bit operating system? [hint] A 32-bit operating system use 32-bit memory address.
+1. What range of integers can we count by our hands when using a binary expression?
+2. What is the size of the pointer in a 32-bit operating system? [hint] A 32-bit operating system use a 32-bit memory address.
 3. How about 64-bit?
 
 <練習>
-Using the **sizeof()** function to check the size of pointer in your environment. And check the sizes of the variables that pointers point to with '*'.
+Using the **sizeof()** function to check the size of the pointer in your environment. And check the sizes of the variables that pointers point to with '*'.
 
 ## The type conversion in pointers
 
-Because of pointers store the memory addresses. Intuitively, we can use one pointer for every address in the memory. However, the compiler needs to know how much the size it has to deal with. Therefore the type is necessary. To change the type of a pointer points to , we have to declare the pointer as a **void** type variable.
+Because pointers store the memory addresses. Intuitively, we can use one pointer for every address in the memory. However, the compiler needs to know how much size it has to deal with. Therefore the type is necessary. To change the type of a pointer points to, we have to declare the pointer as a **void** type variable.
 
 ```C++
 #include<iostream>
@@ -101,7 +101,7 @@ int main()
 
 ## Pointer and the char string
 
-Memory is a one-dimension space, one address store one byte. So what will happen if we do some operations to pointers?
+Memory is a one-dimension space, one address stores one byte. So what will happen if we do some operations to pointers?
 
 ```C++
 #include<iostream>
@@ -116,10 +116,10 @@ int main()
 }
 ```
 
-To travel through an string with a pointer, we must initailize the pointer(makes the pointer point to the start of the string)
+To travel through a string with a pointer, we must initialize the pointer(makes the pointer point to the start of the string)
 
 <練習>
-Try to fix the following code to make it go through the char string
+Try to fix the following code to make it travel through the char string
 ```C++
 #include<iostream>
 
@@ -143,12 +143,12 @@ Pointer only went through the even number in the array.
 
 
 ## Static memory allocation
-**Static memory allocation** is an allocation technique which allocates a fixed amount of memory during compile time and the operating system internally uses a data structure known as Stack to manage this.
+**Static memory allocation** is an allocation technique that allocates a fixed amount of memory during compile time and the operating system internally uses a data structure known as Stack to manage this.
 
-In Static Memory Allocation the memory for your data is allocated when the program starts. The size is fixed when the program is created. It applies to global variables, file scope variables, and variables qualified with static defined inside functions. This memory allocation is fixed and cannot be changed, i.e. increased or decreased after allocation. So, exact memory requirements must be known in advance.
+In Static Memory Allocation, the memory for your data is allocated when the program starts. The size is fixed when the program is created. It applies to global variables, file scope variables, and variables qualified with statically defined inside functions. This memory allocation is fixed and cannot be changed, i.e. increased or decreased after allocation. So, exact memory requirements must be known in advance.
 
 ### Deletion of static allocated memory
-Deletion of memory allocated to a program is as important as allocation otherwise it results in memory leakage. Statically allocated memory is automatically released on the basis of scope, i.e., as soon as the scope of the variable is over, memory allocated get freed.
+Deletion of memory allocated to a program is as important as allocation otherwise it results in memory leakage. Statically allocated memory is automatically released based on scope, i.e., as soon as the scope of the variable is over, memory allocated gets freed.
 
 ### Static Variables
 As the name suggests, the value of static variables persists until the end of the program. A variable can be declared static using the keyword static like
@@ -157,7 +157,7 @@ static int x;
 static float y;
 ```
 #### Internal static variables
-**Internal static variables** are those which are declared inside a function. The scope of static variables extend up to the end of the function in which they are defined. Therefore, internal static variables are similar to auto variables, except that they remain in existence(alive) throughout the remainder of the program.For example, it can be used to count the number of calls made to a function
+**Internal static variables** are those which are declared inside a function. The scope of static variables extends up to the end of the function in which they are defined. Therefore, internal static variables are similar to auto variables, except that they remain in existence(alive) throughout the remainder of the program. For example, it can be used to count the number of calls made to a function
 
 ```C++
 void stat(void);
@@ -188,11 +188,11 @@ void stat(void)
 ## Dynamic memory allocation
 
 All the variables that we declare in our program take some memory to store.
-Moreover, all of them are distributed by compiler in the compile-time. The way to store the data are called static memory allocation.
+Moreover, all of them are distributed by the compiler in the compile-time. The way to store the data are called static memory allocation.
 
 In contrast to static memory allocation, there is a way for the programs to ask the CPU for memory in run-time, this is what we called "dynamic memory allocation".
 
-malloc is defined in the header file stdlib.h, the return value of it is the begin address(first address). It's recommended to use the "sizeof(type)" function to give it the size you need.
+malloc is defined in the header file stdlib.h, and the return value of it is the begin address(first address). It's recommended to use the "sizeof (type)" function to give it the size you need.
 
 ```C++
 int *a;
@@ -205,7 +205,7 @@ s=(char *)malloc(sizeof(char)*10);
 
 ```
 
-Before we go into the practice, there is a very important thing that we must remember : **release of the memory**.
+Before we go into the practice, there is a very important thing that we must remember: **release of the memory**.
 
 When using static memory allocation, the memory will be released after the program ends. But the memory that we get in run-time has to be recycled manually. 
 
@@ -214,7 +214,7 @@ free(variable_name);
 ```
 
 We must keep in mind that the malloc and the free functions must come in pairs. Once we use the malloc function, we must write the free function, too.
-The memory in our CPU is not infinity resources. If we keep using malloc without free, the speed of our system will be more and more slow.
+The memory in our CPU is not infinite resources. If we keep using malloc without free, the speed of our system will be slower and slower.
 
 If the CPU can't give us the resources that we asked for, the return value of malloc will be NULL. As a result, when we use the dynamic memory allocation, we must check whether we get the memory or not.
 
@@ -242,7 +242,7 @@ int main(){
 
 ```
 
-Like the program above, we can consider that the memory we get with malloc is an one-dimension array.
+Like the program above, we can consider that the memory we get with malloc is a one-dimension array.
 
 **[Question1]** What problem(s) is/are in the program above?
 
@@ -273,8 +273,8 @@ if((variable_num=(type *)malloc(sizeof(type)*size))==NULL){
 **[Bonus]**
 Stack memory is allocated during compilation time execution. This is known as static memory allocation.
 
-Heap memory is allocated at run-time compilation. This is know as dynamic memory allocation.
+Heap memory is allocated at run-time compilation. This is known as dynamic memory allocation.
 ![](https://i.imgur.com/YVEH4kW.jpg)
 
 
-[Bonus練習] Please write(modify) a program that the user can keep input the number of numbers to calculate the sum.
+[Bonus練習] Please write(modify) a program that the user can keep inputting the number of numbers to calculate the sum.
